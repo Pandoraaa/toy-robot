@@ -9,7 +9,7 @@ class RobotTest {
         // GIVEN
         var robot = Robot("Roberto")
         // WHEN
-        robot.place(4,0,"NORTH")
+        robot.place(4, 0, "NORTH")
         // THEN
         val x = robot.x
         val y = robot.y
@@ -18,18 +18,59 @@ class RobotTest {
         val expectedY = 0
         val expectedFacing = "NORTH"
 
-        assertEquals(expectedX,x)
-        assertEquals(expectedY,y)
-        assertEquals(expectedFacing,facing)
+        assertEquals(expectedX, x)
+        assertEquals(expectedY, y)
+        assertEquals(expectedFacing, facing)
+    }
+    
+    @Test
+    @DisplayName("the robot should move")
+    fun theRobotShouldMove() {
+        // GIVEN
+        var robot = Robot("Roberto")
+        // WHEN
+        robot.place(4, 0, "NORTH")
+        robot.move()
+        // THEN
+        val x = robot.x
+        val y = robot.y
+        val facing = robot.facing
+        val expectedX = 4
+        val expectedY = 1
+        val expectedFacing = "NORTH"
+
+        assertEquals(expectedX, x)
+        assertEquals(expectedY, y)
+        assertEquals(expectedFacing, facing)
     }
 
+    @Test
+    @DisplayName("the robot should not move")
+    fun theRobotShouldNotMove() {
+        // GIVEN
+        var robot = Robot("Roberto")
+        // WHEN
+        robot.place(4, 4, "NORTH")
+        robot.move()
+        // THEN
+        val x = robot.x
+        val y = robot.y
+        val facing = robot.facing
+        val expectedX = 4
+        val expectedY = 4
+        val expectedFacing = "NORTH"
+
+        assertEquals(expectedX, x)
+        assertEquals(expectedY, y)
+        assertEquals(expectedFacing, facing)
+    }
     @Test
     @DisplayName("it turn to the left")
     fun itTurnToTheLeft() {
         // GIVEN
         var robot = Robot("Roberto")
         // WHEN
-        robot.place(4,0,"NORTH")
+        robot.place(4, 0, "NORTH")
         robot.left()
         val actual = robot.facing
         val expected = "WEST"
@@ -43,7 +84,7 @@ class RobotTest {
         // GIVEN
         var robot = Robot("Roberto")
         // WHEN
-        robot.place(4,0,"NORTH")
+        robot.place(4, 0, "NORTH")
         robot.right()
         val actual = robot.facing
         val expected = "EAST"
@@ -57,11 +98,11 @@ class RobotTest {
         // GIVEN
         var robot = Robot("Roberto")
         // WHEN
-        robot.place(4,0,"NORTH")
+        robot.place(4, 0, "NORTH")
         val actual = robot.report()
-        // THEN
-        // TODO comment vérifier la sortie console ???
-        assertEquals(true, true)
-    }
+        //THEN
+        val expected = "4, 0, NORTH"
 
+        assertEquals(expected, actual)
+    }
 }

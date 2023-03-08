@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RobotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-08T11:00:02" hostname="AMAC02C869JMD6R" time="0.038">
+<testsuite name="RobotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-17T10:16:04" hostname="AMAC02C869JMD6R" time="0.05">
   <properties/>
-  <testcase name="it report its position" classname="RobotTest" time="0.038"/>
+  <testcase name="it report its position" classname="RobotTest" time="0.05"/>
   <system-out><![CDATA[beep boop !
 4, 0, NORTH
 ]]></system-out>

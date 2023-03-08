@@ -36,46 +36,28 @@ data class Robot(
         }
     }
 
-    fun report() {
-        println("beep boop !")
-        println("$x, $y, $facing")
-    }
-
     fun left() {
-        if (facing === "NORTH") {
-            facing = "WEST"
-            return
-        }
-        if (facing === "SOUTH") {
-            facing = "EAST"
-            return
-        }
-        if (facing === "EAST") {
-            facing = "NORTH"
-            return
-        }
-        if (facing === "WEST") {
-            facing = "SOUTH"
-            return
+        when (facing) {
+            "NORTH" -> facing = "WEST"
+            "SOUTH" -> facing = "EAST"
+            "EAST" -> facing = "NORTH"
+            "WEST" -> facing = "SOUTH"
         }
     }
 
     fun right() {
-        if (facing === "NORTH") {
-            facing = "EAST"
-            return
+        when (facing) {
+            "NORTH" -> facing = "EAST"
+            "SOUTH" -> facing = "WEST"
+            "EAST" -> facing = "SOUTH"
+            "WEST" -> facing = "NORTH"
         }
-        if (facing === "SOUTH") {
-            facing = "WEST"
-            return
-        }
-        if (facing === "EAST") {
-            facing = "SOUTH"
-            return
-        }
-        if (facing === "WEST") {
-            facing = "NORTH"
-            return
-        }
+    }
+
+    fun report(): String {
+        val report = "$x, $y, $facing"
+        println("beep boop !")
+        println(report)
+        return report
     }
 }
