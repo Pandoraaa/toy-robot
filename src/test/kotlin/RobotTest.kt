@@ -9,7 +9,7 @@ class RobotTest {
         // GIVEN
         var robot = Robot("Roberto")
         // WHEN
-        robot.place(4,0,"NORTH")
+        robot.place(4, 0, "NORTH")
         // THEN
         val x = robot.x
         val y = robot.y
@@ -18,9 +18,9 @@ class RobotTest {
         val expectedY = 0
         val expectedFacing = "NORTH"
 
-        assertEquals(expectedX,x)
-        assertEquals(expectedY,y)
-        assertEquals(expectedFacing,facing)
+        assertEquals(expectedX, x)
+        assertEquals(expectedY, y)
+        assertEquals(expectedFacing, facing)
     }
 
     @Test
@@ -29,7 +29,7 @@ class RobotTest {
         // GIVEN
         var robot = Robot("Roberto")
         // WHEN
-        robot.place(4,0,"NORTH")
+        robot.place(4, 0, "NORTH")
         robot.left()
         val actual = robot.facing
         val expected = "WEST"
@@ -43,7 +43,7 @@ class RobotTest {
         // GIVEN
         var robot = Robot("Roberto")
         // WHEN
-        robot.place(4,0,"NORTH")
+        robot.place(4, 0, "NORTH")
         robot.right()
         val actual = robot.facing
         val expected = "EAST"
@@ -57,11 +57,9 @@ class RobotTest {
         // GIVEN
         var robot = Robot("Roberto")
         // WHEN
-        robot.place(4,0,"NORTH")
-        val actual = robot.report()
-        // THEN
-        // TODO comment vérifier la sortie console ???
+        robot.place(4, 0, "NORTH")
+        robot.report()
+
         assertEquals(true, true)
     }
-
 }
